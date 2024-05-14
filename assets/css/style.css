@@ -1,0 +1,32 @@
+header {
+  padding: 1rem;
+  margin-top: 2rem;
+  background-color: rgb(209, 209, 209);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* тільки для того щоб не переносити мунулі завдання у функцію або переносити скрипт нижче */
+.logo,
+.avatarIcon {
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: aqua;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  border: 1px solid purple;
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.5rem;
+}
+
+.avatarIcon {
+  border: 3px solid gray;
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 1.3rem;
+}

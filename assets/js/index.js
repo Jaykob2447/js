@@ -82,3 +82,134 @@ if (currentSum >= 500 && currentSum <= 799) {
 
 // оскільки результат який ми повернули за умовою ми ніде не використовуємо розрахунок виконуємо
 // в середені умови, навіть мінімальна валідация використана
+
+//4 isLogin
+
+function myFunc() {
+  const isLogin = true;
+  const buttonRegLog = document.getElementById("buttonRegLog");
+  const avatarIcon = document.getElementById("avatarIcon");
+  const isMale = true;
+  if (isLogin) {
+    buttonRegLog.setAttribute("style", "display: none;");
+    if (isMale) {
+      avatarIcon.setAttribute("style", "border-color: blue;");
+    } else if (isMale === undefined) {
+      avatarIcon.setAttribute("style", "border-color: grey;");
+    } else if (!isMale) {
+      avatarIcon.setAttribute("style", "border-color: red;");
+    }
+  } else {
+    avatarIcon.setAttribute("style", "display: none;");
+  }
+}
+// у разі якщо потрібно буде
+
+/*
+📋 Завдання на switch..case
+
+1. Запитати у користувача номер дня тижня та вивести відповідну повну рядкову назву 
+(наприклад, якщо користувач вводить 7 – виводиться повідомлення "неділя"). Передбачити обробку 
+помилкового введення номера дня тижня (в гілка default, з повідомленням "дня з таким номером не існує").
+
+2. (за бажанням) У змінній day лежить якесь число з інтервалу від 1 до 31. Визначте, до 
+якої декади місяця потрапляє це число (до першої, другої чи третьої). Наприклад, число 1 - це перша декада, 20 - друга, 25 - третя.
+
+*/
+// 1
+do {
+  switch (
+    (currentNumber = Number(
+      prompt("Введіть номер дня тижня для того щоб дізнатися день тижня")
+    ))
+  ) {
+    case 1:
+      console.log("1 день понеділок");
+      break;
+    case 2:
+      console.log("2 день вівторок");
+      break;
+    case 3:
+      console.log("3 день середа");
+      break;
+    case 4:
+      console.log("4 день четверг");
+      break;
+    case 5:
+      console.log("5 день пьятниця");
+      break;
+    case 6:
+      console.log("6 день суббота");
+      break;
+    case 7:
+      console.log("7 день неділя");
+      break;
+    default:
+      console.log("дня з таким номером не існує");
+  }
+} while (isNaN(currentNumber) || currentNumber >= 8 || currentNumber <= 0);
+
+// 2
+do {
+  switch (
+    (currentDay = Number(
+      prompt("Введіть номер дня місяця для того щоб дізнатися декаду")
+    ))
+  ) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+      console.log("Перша декада");
+      break;
+    case 11:
+    case 12:
+    case 13:
+    case 14:
+    case 15:
+    case 16:
+    case 17:
+    case 18:
+    case 19:
+    case 20:
+      console.log("Друга декада");
+      break;
+    case 21:
+    case 22:
+    case 23:
+    case 24:
+    case 25:
+    case 26:
+    case 27:
+    case 28:
+    case 29:
+    case 30:
+    case 31:
+      console.log("Третя декада");
+      break;
+    default:
+      console.log("дня з таким номером у місяці не існує");
+  }
+
+  /*       
+ // Трішки коротший варіант 
+  currentDay = Number(
+    prompt("Введіть номер дня місяця для того щоб дізнатися декаду")
+  );
+  if (currentDay >= 1 && currentDay <= 10) {
+    console.log("Перша декада");
+  } else if (currentDay >= 11 && currentDay <= 20) {
+    console.log("Друга декада");
+  } else if (currentDay >= 21 && currentDay <= 31) {
+    console.log("Третя декада");
+  } else {
+    console.log("дня з таким номером у місяці не існує");
+  }
+ */
+} while (isNaN(currentDay) || currentDay >= 31 || currentDay <= 0);
