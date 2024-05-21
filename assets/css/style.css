@@ -1,32 +1,43 @@
-header {
-  padding: 1rem;
-  margin-top: 2rem;
-  background-color: rgb(209, 209, 209);
+body {
+  padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-/* тільки для того щоб не переносити мунулі завдання у функцію або переносити скрипт нижче */
-.logo,
-.avatarIcon {
-  border-radius: 50%;
-  overflow: hidden;
-  background-color: aqua;
-  color: inherit;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.logo {
-  border: 1px solid purple;
-  height: 3rem;
-  width: 3rem;
-  font-size: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.7rem;
 }
 
-.avatarIcon {
-  border: 3px solid gray;
-  height: 2.5rem;
-  width: 2.5rem;
-  font-size: 1.3rem;
+.wareCard {
+  max-width: 250px;
+  min-width: 150px;
+  width: 100%;
+  max-height: 600px;
+  min-height: 450px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 25px;
+  background: linear-gradient(#df4ac8db, #2484ff87);
+  gap: 0.5rem;
+  line-height: 16px;
+}
+.crossed_out {
+  font-size: 0.9rem;
+  color: gray;
+  text-decoration: line-through;
+}
+.priceWithDiscount {
+  font-size: 1.2rem;
+  color: red;
+}
+
+.priceWare {
+  text-align: end;
+  padding-right: 1rem;
+  line-height: 1.2rem;
+}
+.wareCard img {
+  width: 100%;
+  max-height: 220px;
 }
