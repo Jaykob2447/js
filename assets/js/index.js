@@ -79,6 +79,14 @@ function isCouldBeATriangle(a, b, c) {
 console.log("task 3", isCouldBeATriangle(15, 15, 15));
 
 // 4
+/**
+ * @function
+ * @param {number} a - segment a
+ * @param {number} b - segment b
+ * @param {number} corner - corner
+ * @param {boolean} [sin = true] - true if the angle is in sine, false if in radians
+ * @returns {number} - area by triangle
+ */
 function areaByTriangle(a, b, corner, sin = true) {
   return (1 / 2) * a * b * Math.sin(sin ? (corner * Math.PI) / 180 : corner);
 }
@@ -89,6 +97,16 @@ function areaByQuadrilateral(d1, d2, alpha, sin = true) {
   return areaByTriangle(d1, d2, alpha, (sin = true));
 }
 */
+
+/**
+ * @function areaByQuadrilateral
+ * @param {number} a - segment a
+ * @param {number} b - segment b
+ * @param {number} c - segment c
+ * @param {number} d - segment d
+ * @param {number} r - the radius of the inscribed circle
+ * @returns {number} -  area Quadri lateral
+ */
 
 function areaByQuadrilateral(a, b, c, d, r) {
   return ((a + b + c + d) / 2) * r;
