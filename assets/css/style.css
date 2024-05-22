@@ -22,6 +22,9 @@ body {
   gap: 0.5rem;
   line-height: 16px;
 }
+.wareCard p {
+  flex-grow: 1;
+}
 .crossed_out {
   font-size: 0.9rem;
   color: gray;
