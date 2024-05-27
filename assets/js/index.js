@@ -86,19 +86,31 @@ for (let key in cat) {
 для обчислення віку книги (у роках),
 для зміни ціни книги.
 */
-
-function addBoock(autor, name, year, price) {
-  return { autor, name, year, price };
+const date = new Date();
+const dateYear = date.getFullYear();
+const publishing = { city: "Big city", name: "Big publish" };
+function addBoock(autor, name, year, price, publishing) {
+  (this.autor = autor),
+    (this.name = name),
+    (this.year = year),
+    (this.price = price),
+    (this.publishing = publishing);
 }
 
-const boock = new addBoock(
-  "J. Rowling",
-  "Harry Potter and philosoph stone",
-  2001,
-  4500
-);
+addBoock.prototype.howOld = function () {
+  console.log("Скільки років книжці", dateYear - this.year);
+};
+
 addBoock.prototype.editPrice = function (
   newPrice = prompt("Введіть нову ціну")
 ) {
   this.price = newPrice;
 };
+
+const boock = new addBoock(
+  "J. Rowling",
+  "Harry Potter and philosoph stone",
+  2001,
+  4500,
+  publishing
+);
