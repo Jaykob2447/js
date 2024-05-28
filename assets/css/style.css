@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cardPhon {
+  display: flex;
+  min-height: 150px;
+  max-height: 250px;
+  min-width: 100px;
+  max-width: 150px;
+  flex-direction: column;
+  padding: 15px;
+  padding-top: 70px;
+  margin: 0px auto;
+  background-color: #8123d882;
+  border-radius: 25px;
+}
