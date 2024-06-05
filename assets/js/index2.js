@@ -1,74 +1,49 @@
 /*
-1. Для рекурсивної функції піднесення числа до степеня pow(base, exponent) реалізувати валідацію значень, що передаються,
- і генерацію помилок відповідних типів.
-Виклик функції вкласти в блок try з відловом виняткових ситуацій (помилок) різних типів з оповіщенням користувача про тип помилки.
+Змініть приклад із заняття по замиканню (counter) так, щоб при кожному виклику значення лічильника змінювалося не на 1,
+ а на передане користувачем число (передати його при виклику зовнішньої функції customCounter).
 
-Для спрощення замість рекурсивного алгоритму можна реалізувати повернення значення base**exponent, основу base вважайте
- цілим числом, показник exponent -- додатнім, реалізувати тільки те, що стосується роботи з помилками.
+Приклад використання:
+const myCounter = customCounter1(5);
+const result1 = myCounter(); // => 5
+const result2 = myCounter(); // => 10
+const result3 = myCounter(); // => 15
 
-2. *Реалізувати функцію для валідації імейлу. Імейл має бути рядком і містити символ "@", цей символ не має бути першим або останнім.
+Або:
+
+* Змініть приклад із заняття по замиканню (counter) так, щоб користувач задавав початкове значення лічильника
+ (у прикладі із заняття це 0) і крок зміни лічильника (у прикладі із заняття це 1).
+
+Приклад використання:
+const myCounter = customCounter2 (1, 5);
+const result1 = myCounter(); // => 6
+const result2 = myCounter(); // => 11
+const result3 = myCounter(); // => 16
+
+У ДЕБАГЕРІ відстежити змінні, які перебувають у Замиканні (Closure).
 */
-
-function pow(base, exponent) {
-  if (typeof base !== "number") {
-    throw new TypeError("базове число не є числом");
-  }
-  if (!Number.isInteger(base)) {
-    throw new TypeError("база не є цілим числом");
-  }
-  if (
-    base < 0 ||
-    base <= Number.MIN_SAFE_INTEGER ||
-    base >= Number.MAX_SAFE_INTEGER
-  ) {
-    throw new RangeError("база за межами допустимих чисел");
-  }
-  if (typeof exponent !== "number") {
-    throw new TypeError("exponent не є числом");
-  }
-  if (!Number.isInteger(exponent)) {
-    throw new TypeError("exponent не є цілим числом");
-  }
-  if (
-    exponent < 0 ||
-    exponent >= Number.MAX_SAFE_INTEGER ||
-    exponent <= Number.MIN_SAFE_INTEGER
-  ) {
-    throw new RangeError(
-      "exponent за межами допустимих значень або не є додатнім числом"
-    );
-  }
-  // за для корректності помилки перевіряю кожну змінну, якщо би їх було більше або безліч то спростив обьеднаши перевірку або виніс у іншу функцію
-
-  // return base**exponent
-  if (base == 1 || base == 0) return base;
-  if (exponent > 1) return base * pow(base, --exponent);
-  if (exponent < 1) return (1 / base) * pow(base, ++exponent);
-
-  return base;
+function customCounter(n) {
+  return +prompt("на скільки збільшити число?", n);
 }
 
-try {
-  console.log(pow(2, 2));
-} catch (err) {
-  console.log("err", err);
-}
-
-const someMail = "  someMail@somegmail.com  ";
-
-function validMail(mail) {
-  if (typeof mail != "string") {
-    throw new TypeError("Ел. адресса не є строкою");
+function counter() {
+  let count = 0;
+  function counterIn() {
+    count += customCounter(5);
+    return count;
   }
-  const mailTrim = mail.trim();
-  if (mailTrim[0] === "@" || mailTrim[mailTrim.length - 1] === "@") {
-    throw new SyntaxError("не коретне введення пошти");
-  }
-  return mailTrim;
+  return counterIn;
 }
 
-try {
-  validMail(someMail);
-} catch (err) {
-  console.log("err", err);
-}
+// //or
+// function counter(count, n) {
+//   function counterIn() {
+//     return (count += n);
+//   }
+//   return counterIn;
+// }
+
+const myCounter = counter();
+const result1 = myCounter(); // => 5
+const result2 = myCounter(); // => 10
+const result3 = myCounter(); // => 15
+console.log(result1, result2, result3);
