@@ -114,7 +114,7 @@ class Post {
           </article>
           `);
   }
-  //   render({}) {
+  //   render() {
   //     document.write(`
   //         <article>
   //         <img src=${_img} alt=${_title}>
@@ -208,3 +208,4 @@ try {
 } catch (err) {
   console.log(err);
 }
+const list = [...heshList];
