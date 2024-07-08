@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./../assets/css/reset.css" />
+    <link rel="stylesheet" href="./../assets/css/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="div-form">
+        <h2 class="h2-form">Lorem ipsum dolor sit amet.</h2>
+        <p class="abaut-form">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur
+          impedit et quasi iste! Sint voluptatibus, illo corrupti adipisci est
+          aut.
+        </p>
+        <form class="contact-form">
+          <label class="label-form">
+            <span>Your name</span>
+            <input
+              class="area-form"
+              required
+              name="userName"
+              type="text"
+              placeholder="Name"
+              minlength="2"
+              maxlength="36"
+              pattern="[A-Z][a-z]+"
+            />
+            <input
+              class="area-form"
+              required
+              name="userSurname"
+              type="text"
+              placeholder="Sur Name"
+              minlength="3"
+              maxlength="36"
+              pattern="[A-Z][a-z]+"
+            />
+          </label>
+          <label class="label-form">
+            <span>Your email</span>
+            <input
+              class="area-form"
+              required
+              name="userEmail"
+              type="email"
+              placeholder="your.mail@gmail.com"
+              minlength="5"
+            />
+          </label>
+          <label class="label-form">
+            <span>Phone*</span>
+            <input
+              class="area-form"
+              name="userPhone1/3"
+              type="text"
+              placeholder="+38096"
+              pattern="\+380\d{2}"
+            />
+            <input
+              class="area-form"
+              name="userPhone2/3"
+              type="text"
+              placeholder="820"
+              pattern="\d{3}"
+            />
+            <input
+              class="area-form"
+              name="userPhone3/3"
+              type="text"
+              placeholder="9194"
+              pattern="\d{4}"
+            />
+          </label>
+          <label class="label-form">
+            <span>Massage subject*</span>
+            <select name="massageSub">
+              <option value="value1">Some value 1</option>
+              <option value="value2">Some value 2</option>
+              <option value="value3">Some value 3</option>
+            </select>
+          </label>
+          <label class="label-form massage-label">
+            <span>Massage*</span>
+            <textarea
+              class="area-form"
+              name="massage"
+              rows="5"
+              cols="15"
+              placeholder="Your lorem"
+              maxlength="2048"
+            ></textarea>
+          </label>
+          <div class="div-button">
+            <button type="submit" class="button-submit">Submit form</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
